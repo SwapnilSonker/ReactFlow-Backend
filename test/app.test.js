@@ -7,7 +7,7 @@ describe('POST /schedule-email', function() {
         request(app)
             .post('/schedule-email')
             .send({
-                to: 'swapnilsonker04@gmail.com',
+                to: 'sonkerswapnildev@gmail.com',
                 subject: 'Scheduled Email Test',
                 body: 'Hello, this is a scheduled email!'
             })

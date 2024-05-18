@@ -42,7 +42,8 @@ import { ConnectDB } from './data/database.js';
 const setupAgenda = async () => {
     await ConnectDB; // Connect to MongoDB
 
-    const mongoConnectionString = 'mongodb+srv://swapnilsonker04:7fHxccXugdRKRx5g@cluster0.ztffk6e.mongodb.net/myDatabase?retryWrites=true';
+    // const mongoConnectionString = 'mongodb+srv://swapnilsonker04:7fHxccXugdRKRx5g@cluster0.ztffk6e.mongodb.net/myDatabase?retryWrites=true';
+    const mongoConnectionString = process.env.MONGO_DB
     const agenda = new Agenda({ db: { address: mongoConnectionString, collection: 'agendaJobs' } });
 
     // Define a job to send email
