@@ -40,7 +40,7 @@ setupAgenda().then((agenda) => {
             const oneHourLater = new Date(now.getTime() + 60 * 60 * 1000); // Adding 1 hour in milliseconds
 
             // Schedule the job to send email after 1 hour
-            await agenda.schedule('2 seconds', 'sendEmailJob', { to, subject, body });
+            await agenda.schedule(oneHourLater, 'sendEmailJob', { to, subject, body });
             res.status(200).json({ message: 'Email scheduled successfully' });
         } catch (error) {
             console.error('Error scheduling email:', error.message);
