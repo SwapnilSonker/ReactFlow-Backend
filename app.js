@@ -3,12 +3,16 @@ import { ConnectDB } from "./data/database.js";
 import { config } from "dotenv";
 import mongoose from "mongoose";
 import setupAgenda from "./jobs.js";
+import cors from "cors";
 
 const app = express();
 
 config({
   path: "./data/config.env",
 });
+
+// Enabling CORS for routes
+app.use(cors());
 
 //using middlewares
 app.use(express.json());
